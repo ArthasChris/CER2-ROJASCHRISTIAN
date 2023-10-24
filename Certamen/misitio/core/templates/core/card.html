@@ -1,0 +1,13 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 container-lg">
+{% for comunicado in comunicados %}
+        <div class="col-md-3 mb-3 mt-3" >
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ comunicado.titulo }}</h5>
+              <p class="card-text"><strong>Departamento:</strong> {{ comunicado.entidad.nombre }}</p>
+              <p class="card-text">{{ comunicado.detalle }}</p>
+            </div>
+          </div>
+        </div>
+{% endfor %}
+</div>

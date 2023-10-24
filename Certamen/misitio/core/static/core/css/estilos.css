@@ -1,0 +1,48 @@
+
+.navbar {
+    background-color: #C2BCBB; 
+}
+#row{
+width: 100%;
+clear:both;
+}
+
+.col1{
+    width: 30%;
+    float: left;
+}
+.col2{
+    width: 70%;;
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+}
+#logo{
+    width: 60%;
+    height: 70%;
+}
+
+@media(max-width: 767px){
+    .titulo{
+        display: none;
+    }
+    .navbar{
+        display: none;
+    }
+    .col1{
+        width: 100%;
+        float:none;
+        text-align: center;
+        
+    }
+    .col2{
+        width: 0%;
+    }
+    .dropdown {
+        text-align: center; 
+    }
+    
+    .dropdown-menu {
+        width: 200px; 
+    }
+}

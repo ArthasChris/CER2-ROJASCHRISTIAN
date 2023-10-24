@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col1">
+            <img src="{% static 'core/img/Logo_UTFSM.png' %}" alt="" id="logo">
+        </div>
+        <div class="col2">
+            <div class="titulo">
+                <h1>Sistema Integrado de Notificaciones </h1>
+            </div>
+            
+        </div>
+
+    </div>
+    <section>
+        <div class="container-fluid">
+            <div>
+                {% include 'core/navbar.html' %}
+            </div>
+        </div>
+    </section>
+    <section>
+    <div class="container"> 
+        <div class="row">
+          <div class="col-md-4 mt-3">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Filtrar por entidad
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'home' %}">Todas las entidades</a></li>
+                {% for entidad in entidades %}
+                  <li><a class="dropdown-item" href="{% url 'mostrar_comunicados' entidad.id %}">{{ entidad.nombre }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>>
+    </section>
+    <div>
+        {% include 'core/card.html' %}
+    </div>
+    <div>
+        {% include 'core/carousel.html' %}
+    </div>
+</body>
+
+</html>
